@@ -48,5 +48,6 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          script: |
+          run: |
+            cd aws-react-experiment
             ./build.sh
