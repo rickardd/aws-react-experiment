@@ -1,0 +1,46 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: |
+          cd react
+          npm install
+          npm run lint
+          npm run build
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3 # Each step is isolated so we need to define this again.
+
+      - name: Run Tests
+        run: |
+          cd react
+          npm install
+          npm run test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build, test] # Depends on the successful completion of the "build" and "test" jobs
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy
+        run: |
+          # Deploy your application here
