@@ -1,5 +1,5 @@
 git pull
 npm install
 cd react
-source build.sh
+sudo source build.sh
 cd ..
