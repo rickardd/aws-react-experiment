@@ -51,4 +51,4 @@ jobs:
           script:
             | # Script seems to be similar to run but script is used on the remote sever!?
             cd aws-react-experiment
-            sudo ./build.sh
+            ./build.sh
