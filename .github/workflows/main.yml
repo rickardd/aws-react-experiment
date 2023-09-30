@@ -23,10 +23,12 @@ jobs:
         run: |
           node -v
           cd react
+          pwd
           npm install
           npm run lint
           npm run test
           npm run build
       - name: Run Tests Again
         run: |
+          pwd
           npm run test
