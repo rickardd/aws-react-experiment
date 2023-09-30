@@ -21,4 +21,6 @@ jobs:
           node -v
           cd react
           npm install
+          npm lint
           npm test
+          npm build
