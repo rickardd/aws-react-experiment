@@ -18,6 +18,7 @@ jobs:
 
       - name: Run Tests
         run: |
+          node -v
           cd react
           npm install
           npm test
