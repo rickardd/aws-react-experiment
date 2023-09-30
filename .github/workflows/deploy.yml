@@ -48,6 +48,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          run: |
+          script:
+            | # Script seems to be similar to run but script is used on the remote sever!?
             cd aws-react-experiment
             ./build.sh
